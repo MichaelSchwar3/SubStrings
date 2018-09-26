@@ -1,19 +1,20 @@
-## Descrambler
+## Substrings
 
 ### Background
 
-TextTwist is a word descrambler game intended to keep the mind sharp.
+Substrings is a word descrambler game intended to keep the mind sharp.
 
 The rules of the game are simple. A player is given 6 jumbled letters and has
 two minutes to try and descramble as many words as possible. Each letter may
 only be used once per word. Each word is worth a certain amount of points.
 If the player is able to guess one of (or possibly the only) 6 letter words,
 then the player may move on to the next round. The game ends when the player is unable
-to guess the 6 letter word within the given time.
+to guess the 6 letter word within the given time. Players can also guess 3-5 letter words
+to get extra points before moving on to the next round.
 
 ### Functionality & MVP
 
-User's will be able to have the following functionality within TextTwist:
+User's will be able to have the following functionality within Substrings:
 
 - [ ] Start and restart the game
 - [ ] Guess words correctly/incorrectly
@@ -67,7 +68,7 @@ In addition to the entry file, there will be three scripts involved in this proj
 
 ### Bonus features
 
-There are many directions TextTwist could eventually go.  Some anticipated updates are:
+There are many directions Substrings could eventually go.  Some anticipated updates are:
 
 - [ ] Allow user to pause game
 - [ ] Turn off timer for casual play
