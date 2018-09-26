@@ -1,0 +1,277 @@
+body{
+    width: 100%;
+    text-align: center;
+}
+
+#board-container{
+    width: 900px;
+    margin: auto;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+#level1{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: darkgrey;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#level2{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#score{
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+#timer{
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+#round{
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+#level3{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#personal-site{
+    width: 125px;
+}
+
+#word-board{
+    width: 450px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+
+#linkedin{
+    width: 125px;
+}
+
+#level4{
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#guessing-area{
+    width: 450px;
+    height: 75px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slet-under-guess{
+    width: 75px;
+    border: 2px solid white;
+    height: 75px;
+    box-sizing: border-box;
+}
+
+
+#level5{
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#scrambled{
+    width: 450px;
+    height: 50px;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+}
+
+.slet-under{
+    position: relative;
+    width: 35px;
+    margin-left: 10px;
+    height: 35px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background-color: yellow;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#slet-sec{
+    position: relative;
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slet{
+    position: absolute;
+    width: 50px;
+    top: -10px;
+    left: -10px;
+    z-index: 3;
+    height: 50px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#level6{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#twist{
+    background-color: rgb(26, 127, 167);
+    width: 125px;
+    height: 50px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#last{
+    background-color: rgb(26, 127, 167);
+    width: 125px;
+    height: 50px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#clear{
+    background-color:rgb(26, 127, 167);
+    width: 125px;
+    height: 50px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#enter{
+    background-color: rgb(26, 127, 167);
+    width: 125px;
+    height: 50px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+.guess-0{
+    top: -85px;
+    left: 0px;
+    transition: .5s;
+}
+
+.guess-1{
+    top: -85px;
+    left: 75px;
+    transition: .5s;
+}
+.guess-2{
+    top: -85px;
+    left: 150px;
+    transition: .5s;
+}
+.guess-3{
+    top: -85px;
+    left: 225px;
+    transition: .5s;
+}
+.guess-4{
+    top: -85px;
+    left: 300px;
+    transition: .5s;
+}
+.guess-5{
+    top: -85px;
+    left: 375px;
+    transition: .5s;
+}
+
+

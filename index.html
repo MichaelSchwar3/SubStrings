@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" media="all" href="./assets/00-css-reset.css">
+    <link rel="stylesheet" media="all" href="./assets/board-css.css">
+    <title></title>
+  </head>
+  <body>
+        <form>
+                <fieldset>
+                  <label for="target">Type Something:</label>
+                  <input id="target" type="text">
+                </fieldset>
+        </form>
+      <script>
+          let pos = 0;
+        $('#target').keydown(function(event) {
+            if (event.keyCode >= 65 && event.keyCode <= 90) { 
+                $(`#let-${pos}`).addClass(`guess-${pos}`)  
+                pos+=1
+                console.log(pos);
+                if(pos>=5) pos = 0;
+            }
+          });
+        </script>
+    <div id="board-container">
+        <div id="level1">
+            <button>GH</button>
+        </div>
+        <div id="level2">
+            <section id="score">
+                Score
+            </section>
+            <section id="timer">
+                Timer
+            </section>
+            <section id="round">
+                Round
+            </section>
+        </div>
+        <div id="level3">
+            <section id="personal-site">
+                <button>Personal Site</button>
+            </section>
+            <section id="word-board">
+                Board
+            </section>
+            <section id="linkedin">
+                <button>LinkedIn</button>
+            </section>
+        </div>
+        <div id="level4">
+            <section id="guessing-area">
+                <div class="slet-under-guess"></div>
+                <div class="slet-under-guess"></div>
+                <div class="slet-under-guess"></div>
+                <div class="slet-under-guess"></div>
+                <div class="slet-under-guess"></div>
+                <div class="slet-under-guess"></div>
+            </section>
+        </div>
+        <div id="level5">
+            <section id="scrambled">
+                <section id="slet-sec">
+                    <div class="slet-under"><div class="slet" id="let-0"></div></div>
+                    <div class="slet-under"><div class="slet" id="let-1"></div></div>
+                    <div class="slet-under"><div class="slet" id="let-2"></div></div>
+                    <div class="slet-under"><div class="slet" id="let-3"></div></div>
+                    <div class="slet-under"><div class="slet" id="let-4"></div></div>
+                    <div class="slet-under"><div class="slet" id="let-5"></div></div>
+                </section>
+            </section>
+        </div>
+        <div id="level6">
+            <section id="function-buttons">
+                <button id="twist">Twist</button>
+                <button id="last">Last</button>
+                <button id="clear">Clear</button>
+                <button id="enter">Enter</button>
+            </section>
+        </div>
+    </div>
+  </body>
+</html>
