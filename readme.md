@@ -1,4 +1,4 @@
-## TextTwist
+## Descrambler
 
 ### Background
 
@@ -30,6 +30,8 @@ In addition, this project will include:
 
 This app will consist of a single screen that has has the score, time and round
 displayed across the top. Then across the middle, will be the remaining words to be guessed. Under this will be the guessing area, followed by the letters. Finally on the bottom will be the option buttons (shuffle, enter, clear, last word). Additionally across the left and right sides will be links to Github etc.
+
+![alt text](/images/wire.png)
 
 
 ### Architecture and Technologies
