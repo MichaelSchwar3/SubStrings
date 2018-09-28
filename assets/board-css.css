@@ -65,6 +65,56 @@ button{
     margin-bottom: 15px;
 }
 
+#board-list{
+  /* flex-wrap: wrap; */
+  width: 400px;
+  /* margin: auto; */
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  /* -moz-column-count: 3;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 20px;
+  column-count: 3;
+  column-gap: 20px; */
+  display: flex;
+  flex-flow: wrap column;
+  max-height: 175px;
+}
+
+.word{
+  /* background-color: white;
+  border: .5px solid black; */
+  width: 100px;
+  /* float: left; */
+}
+
+.letter{
+  width: 15px;
+  background-color: white;
+  border: .5px solid black;
+  min-width: 15px;
+  min-height: 20px;
+  box-shadow:
+  inset 0 1px 0 rgba(255,255,255,0.5),
+  0 2px 2px rgba(0,0,0,0.3),
+  0 0 4px 1px rgba(0,0,0,0.2),
+  inset 0 3px 2px rgba(255,255,255,.22),
+  inset 0 -3px 2px rgba(0,0,0,.15),
+  inset 0 20px 10px rgba(255,255,255,.12),
+  0 0 4px 1px rgba(0,0,0,.1),
+  0 3px 2px rgba(0,0,0,.2);
+}
+
+.hidden-letter{
+  display: none;
+}
+
+ul[id*="word-"]{
+  display: flex;
+}
+
 #personal-site{
     width: 125px;
 }
@@ -116,8 +166,12 @@ button{
     position: relative;
 }
 
-.slet-under{
+#floating-objects{
     position: relative;
+}
+
+.slet-under{
+    position: absolute;
     width: 35px;
     margin-left: 10px;
     height: 35px;
@@ -129,10 +183,10 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -145,6 +199,7 @@ button{
 }
 
 .slet{
+    /* display: none; */
     position: absolute;
     width: 50px;
     top: -10px;
@@ -159,10 +214,10 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -184,10 +239,10 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -201,10 +256,10 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -218,10 +273,10 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -235,43 +290,111 @@ button{
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
+.let-0{
+    top: -30px;
+    left: 10px;
+    transition: .5s;
+}
+
+.let-1{
+    top: -30px;
+    left: 85px;
+    transition: .5s;
+}
+.let-2{
+    top: -30px;
+    left: 160px;
+    transition: .5s;
+}
+.let-3{
+    top: -30px;
+    left: 235px;
+    transition: .5s;
+}
+.let-4{
+    top: -30px;
+    left: 310px;
+    transition: .5s;
+}
+.let-5{
+    top: -30px;
+    left: 385px;
+    transition: .5s;
+}
+
+
+.under-0{
+    top: 0px;
+    left: 10px;
+}
+
+.under-1{
+    top: 0px;
+    left: 85px;
+}
+
+.under-2{
+    top: 0px;
+    left: 160px;
+}
+
+.under-3{
+    top: 0px;
+    left: 235px;
+}
+
+.under-4{
+    top: 0px;
+    left: 310px;
+}
+
+.under-5{
+    top: 0px;
+    left: 385px;
+}
+
+
 .guess-0{
-    top: -85px;
-    left: 0px;
+    top: -103px;
+    left: 10px;
     transition: .5s;
 }
 
 .guess-1{
-    top: -85px;
-    left: 75px;
+    top: -103px;
+    left: 85px;
     transition: .5s;
 }
 .guess-2{
-    top: -85px;
-    left: 150px;
+    top: -103px;
+    left: 160px;
     transition: .5s;
 }
 .guess-3{
-    top: -85px;
-    left: 225px;
+    top: -103px;
+    left: 235px;
     transition: .5s;
 }
 .guess-4{
-    top: -85px;
-    left: 300px;
+    top: -103px;
+    left: 310px;
     transition: .5s;
 }
 .guess-5{
-    top: -85px;
-    left: 375px;
+    top: -103px;
+    left: 385px;
     transition: .5s;
 }
 
-
+#target{
+    position: absolute;
+    z-index: -1;
+    opacity: .1;
+}

@@ -2,39 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
     <link rel="stylesheet" media="all" href="./assets/00-css-reset.css">
     <link rel="stylesheet" media="all" href="./assets/board-css.css">
+    <script type="text/javascript" src="./lib/substrings.js"></script>
     <title></title>
   </head>
   <body>
-        <form>
-                <fieldset>
-                  <label for="target">Type Something:</label>
-                  <input id="target" type="text">
-                </fieldset>
-        </form>
-      <script>
-          let pos = 0;
-        $('#target').keydown(function(event) {
-            if (event.keyCode >= 65 && event.keyCode <= 90) { 
-                $(`#let-${pos}`).addClass(`guess-${pos}`)  
-                pos+=1
-                console.log(pos);
-                if(pos>=5) pos = 0;
-            }
-          });
-        </script>
     <div id="board-container">
         <div id="level1">
             <button>GH</button>
         </div>
         <div id="level2">
             <section id="score">
-                Score
+                Score: <span id="score-counter">0</span>
             </section>
             <section id="timer">
-                Timer
+                Timer: <span id="timer-time"></span>
             </section>
             <section id="round">
                 Round
@@ -45,7 +29,8 @@
                 <button>Personal Site</button>
             </section>
             <section id="word-board">
-                Board
+              <ul id="board-list">
+              </ul>
             </section>
             <section id="linkedin">
                 <button>LinkedIn</button>
@@ -64,12 +49,20 @@
         <div id="level5">
             <section id="scrambled">
                 <section id="slet-sec">
-                    <div class="slet-under"><div class="slet" id="let-0"></div></div>
-                    <div class="slet-under"><div class="slet" id="let-1"></div></div>
-                    <div class="slet-under"><div class="slet" id="let-2"></div></div>
-                    <div class="slet-under"><div class="slet" id="let-3"></div></div>
-                    <div class="slet-under"><div class="slet" id="let-4"></div></div>
-                    <div class="slet-under"><div class="slet" id="let-5"></div></div>
+                    <section id="floating-objects">
+                        <div class="slet let-0" >a</div>
+                        <div class="slet let-1" >b</div>
+                        <div class="slet let-2" >c</div>
+                        <div class="slet let-3" >d</div>
+                        <div class="slet let-4" >e</div>
+                        <div class="slet let-5" >f</div>
+                    </section>
+                    <div class="slet-under under-0"></div>
+                    <div class="slet-under under-1"></div>
+                    <div class="slet-under under-2"></div>
+                    <div class="slet-under under-3"></div>
+                    <div class="slet-under under-4"></div>
+                    <div class="slet-under under-5"></div>
                 </section>
             </section>
         </div>

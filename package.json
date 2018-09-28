@@ -1,0 +1,23 @@
+{
+  "name": "SubStrings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "fs-es6": "0.0.2",
+    "linebyline": "^1.3.0",
+    "webpack": "^4.20.1",
+    "webpack-cli": "^3.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch lib/main.js -o lib/substrings.js --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
