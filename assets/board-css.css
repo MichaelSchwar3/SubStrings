@@ -21,7 +21,6 @@ body{
 
 #logo{
   position: absolute;
-  /* color: white; */
   top: 10px;
   font-size: 45px;
   left: 660px;
@@ -136,10 +135,12 @@ button{
   inset 0 20px 10px rgba(255,255,255,.12),
   0 0 4px 1px rgba(0,0,0,.1),
   0 3px 2px rgba(0,0,0,.2);
+  transition: .5s;
 }
 
 .hidden-letter{
   display: none;
+  transition: .5s;
 }
 
 ul[id*="word-"]{
@@ -178,8 +179,12 @@ ul[id*="word-"]{
 
 .slet-under-guess{
     width: 75px;
+    background-color: #57C0EF;
     border: 2px solid white;
+    border-radius: 3px;
     height: 75px;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
     box-sizing: border-box;
 }
 
