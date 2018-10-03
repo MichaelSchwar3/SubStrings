@@ -8,9 +8,43 @@
     <link rel="stylesheet" media="all" href="./assets/00-css-reset.css">
     <link rel="stylesheet" media="all" href="./assets/board-css.css">
     <script type="text/javascript" src="./lib/substrings.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyCO7OyQ7vAPvf2Rj0_WRfXLj46jSUG7jog",
+        authDomain: "substrings-f75e7.firebaseapp.com",
+        databaseURL: "https://substrings-f75e7.firebaseio.com",
+        projectId: "substrings-f75e7",
+        storageBucket: "substrings-f75e7.appspot.com",
+        messagingSenderId: "279796417288"
+      };
+      firebase.initializeApp(config);
+      const query = firebase.database().ref().child('scores/')
+      .orderByChild("score").limitToLast(10);
+      let num = 10;
+      query.on('child_added', (snapshot) => {
+        childScore = snapshot.val();
+        let scoreBoard = document.getElementById("leaderboard");
+        scoreBoard.innerHTML = `<div>${num} ${childScore.name.toUpperCase()} ${childScore.score}</div>` +scoreBoard.innerHTML ;
+      num--;
+      });
+    </script>
     <title>SubStrings</title>
   </head>
   <body>
+    <section id="instructions-container">
+      <span>Instructions:</span><br/>
+      <div id="instructions">
+        <ul>
+          <li>Use your keyboard to type your guess</li><br/>
+          <li>Use "enter" to guess</li><br/>
+          <li>Find the 6 letter word to move on</li><br/>
+          <li>Boost up your score with more words!</li><br/>
+          <li>Use space-bar to shuffle the letters</li><br/>
+          <li>Have fun!</li>
+        </ul>
+      </div>
+    </section>
     <div id="board-container">
         <div id="logo">
           SubStrings
@@ -27,7 +61,7 @@
                 Timer: <span id="timer-time"></span>
             </section>
             <section id="round">
-                Round 1
+                Round: <span id="round-counter">0</span>
             </section>
         </div>
         <div id="level3">
@@ -56,12 +90,12 @@
             <section id="scrambled">
                 <section id="slet-sec">
                     <section id="floating-objects">
-                        <div class="slet let-0" >a</div>
-                        <div class="slet let-1" >b</div>
-                        <div class="slet let-2" >c</div>
-                        <div class="slet let-3" >d</div>
-                        <div class="slet let-4" >e</div>
-                        <div class="slet let-5" >f</div>
+                        <div class="slet let-0" ></div>
+                        <div class="slet let-1" ></div>
+                        <div class="slet let-2" ></div>
+                        <div class="slet let-3" ></div>
+                        <div class="slet let-4" ></div>
+                        <div class="slet let-5" ></div>
                     </section>
                     <div class="slet-under under-0"></div>
                     <div class="slet-under under-1"></div>
@@ -81,5 +115,10 @@
             </section>
         </div>
     </div>
+    <section id="leaderboard-container">
+      <span>Leaderboard:</span><br/>
+      <div id="leaderboard">
+      </div>
+    </section>
   </body>
 </html>
