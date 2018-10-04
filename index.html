@@ -25,7 +25,7 @@
       query.on('child_added', (snapshot) => {
         childScore = snapshot.val();
         let scoreBoard = document.getElementById("leaderboard");
-        scoreBoard.innerHTML = `<div>${num} ${childScore.name.toUpperCase()} ${childScore.score}</div>` +scoreBoard.innerHTML ;
+        scoreBoard.innerHTML = `<div>Round: ${childScore.round} -  ${childScore.name.toUpperCase()} ${childScore.score}</div>` +scoreBoard.innerHTML ;
       num--;
       });
     </script>

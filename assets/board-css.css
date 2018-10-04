@@ -451,6 +451,8 @@ ul[id*="word-"]{
 
 #new-game-button{
   width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 
 #leaderboard-container{
@@ -461,6 +463,7 @@ ul[id*="word-"]{
   height: 250px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   -webkit-touch-callout: none;
@@ -516,4 +519,5 @@ ul[id*="word-"]{
   margin-top: 5px;
   margin-left: 10px;
   color: white;
+  border-radius: 8px;
 }
