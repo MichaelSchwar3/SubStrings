@@ -12,28 +12,6 @@ then the player may move on to the next round. The game ends when the player is 
 to guess the 6 letter word within the given time. Players can also guess 3-5 letter words
 to get extra points before moving on to the next round.
 
-### Functionality & MVP
-
-User's will be able to have the following functionality within Substrings:
-
-- [ ] Start and restart the game
-- [ ] Guess words correctly/incorrectly
-- [ ] Shuffle letters
-- [ ] Clear the Board
-- [ ] See the last word entered
-
-In addition, this project will include:
-
-- [ ] Leaderboard
-- [ ] A production README
-
-### Wireframes
-
-This app will consist of a single screen that has has the score, time and round
-displayed across the top. Then across the middle, will be the remaining words to be guessed. Under this will be the guessing area, followed by the letters. Finally on the bottom will be the option buttons (shuffle, enter, clear, last word). Additionally across the left and right sides will be links to Github etc.
-
-![alt text](/images/wire.png)
-
 
 ### Architecture and Technologies
 
@@ -44,32 +22,98 @@ This project will be implemented with the following technologies:
 
 In addition to the entry file, there will be three scripts involved in this project:
 
-`board.js`: this script will handle the logic for creating and updating the necessary elements and rendering them to the DOM. This will handle the logic for the buttons such as shuffle, enter, clear and last word.
+`view.js`: this script will handle the logic for creating and updating the necessary elements and rendering them to the DOM. This will handle the logic for the buttons such as shuffle, enter, clear and last word.
 
-`words.js`: this script will handle the logic behind the scenes. Selecting a 6 letter word from the library of words, finding all words that can be descrambled from the chosen 6 letters and determining if the guessed word was correct//incorrect
+`game.js`: this script will handle the user logic for the leaderboard. This class keeps score, round and username to be saved to the Google Firebase DB
 
-### Implementation Timeline
+`main.js`: this script will be the entry point for our bundle file. It will also have a few methods hosted on the window in order to allow the user to start a game.
 
-**Day 1**: Setup all necessary Node modules, including getting webpack up and running. Write a basic entry file with the basic game logic written out in JavaScript. Goals for the day:
+### Code Examples
 
-- Complete game logic
-- Review Canvas enough to be able to render a blank board
+Within SubStrings there is a lot of DOM Manipulation going on throughout the entire game, however the 2 most complicated portions are getting the event listeners to respond correctly and the creation of the board
 
-**Day 2**: Dedicate the day to desigining and finishing the rendering through canvas  Goals for the day:
+#### EventListeners
 
-- Finish words.js logic for obtaining words
-- Render a proper board
+First it was necessary to instantiate an object that kept track of what letter was in what position. As seen below there was a `setLetters` method that would do this for us.
 
-**Day 3**: Finish up extra effects of canvas and any game logic as necessary  Goals for the day:
+```javascript
+setLetters(){
+  this.let0 = $(`.let-0`);
+  this.let1 = $(`.let-1`);
+  this.let2 = $(`.let-2`);
+  this.let3 = $(`.let-3`);
+  this.let4 = $(`.let-4`);
+  this.let5 = $(`.let-5`);
+  this.letters = {
+    [this.let0.html().toLowerCase()] : 0,
+    [this.let1.html().toLowerCase()] : 1,
+    [this.let2.html().toLowerCase()] : 2,
+    [this.let3.html().toLowerCase()] : 3,
+    [this.let4.html().toLowerCase()] : 4,
+    [this.let5.html().toLowerCase()] : 5,
+  };
+}
+```
 
-- Complete the Javascript coding
-- Complete canvas animations
+The event listener then uses this object to determine what action to do upon keypress
 
 
-### Bonus features
+```javascript
+listenerFunction(event) {
+  if (this.letters[event.key] !== undefined) {
+    if (!$(`.let-${this.letters[event.key]}`).hasClass("guessed")) {
+      this.soundLetter.currentTime = 0;
+      if (this.music) {
+        this.soundLetter.play();
+      }
+      $(`.let-${this.letters[event.key]}`).addClass(`guess-${this.pos} guessed`);
+      this.guessPos.unshift(this.letters[event.key]);
+      this.pos+=1;
+    }
+  }else if (event.keyCode === 46 || event.keyCode === 8) {
+      this.pos -= 1;
+      if (this.pos <= 0) this.pos = 0;
+      $(`.let-${this.guessPos[0]}`).removeClass(`guess-${this.pos} guessed`);
+      this.guessPos.shift();
+  }else if (event.keyCode === 13) {
+    this.soundGuess.currentTime = 0;
+    if (this.music) {
+      this.soundGuess.play();
+    }
+    this.guess();
+    this.guessPos = [];
+    this.pos = 0;
+  }else if(event.keyCode === 32) {
+    this.soundShuffle.currentTime = 0;
+    if (this.music) {
+      this.soundShuffle.play();
+    }
+    this.shuffleLetters();
+  }else if(event.keyCode === 49){
+    this.soundToggle();
+  }
+}
+```
 
-There are many directions Substrings could eventually go.  Some anticipated updates are:
+#### Board Creation
 
-- [ ] Allow user to pause game
-- [ ] Turn off timer for casual play
-- [ ] Add Sound effects
+The `makeBoard` method, finds the list that is embedded within the `board-container` and appends a new unordered list for each word. Then the method uses jQuery to find this newly created word and append letters in the form of list items with the necessary classes applied
+
+```javascript
+makeBoard() {
+  const level = Object.values(this.words);
+  let currentWord = "";
+  $('#board-list').empty();
+  for (let i = 0; i < level.length; i++) {
+    $('#board-list').append(
+      `<li class="word"><ul id="word-${i}"></ul></li>`
+    );
+    currentWord = level[i].split("");
+    for (let j = 0; j < currentWord.length; j++) {
+      $(`#word-${i}`).append(
+      `<li class="letter"><span class="hidden-letter ${level[i]}">${currentWord[j]}</span></li>`
+    );
+    }
+  }
+
+```
