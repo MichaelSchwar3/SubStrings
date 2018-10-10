@@ -38,20 +38,11 @@ First it was necessary to instantiate an object that kept track of what letter w
 
 ```javascript
 setLetters(){
-  this.let0 = $(`.let-0`);
-  this.let1 = $(`.let-1`);
-  this.let2 = $(`.let-2`);
-  this.let3 = $(`.let-3`);
-  this.let4 = $(`.let-4`);
-  this.let5 = $(`.let-5`);
-  this.letters = {
-    [this.let0.html().toLowerCase()] : 0,
-    [this.let1.html().toLowerCase()] : 1,
-    [this.let2.html().toLowerCase()] : 2,
-    [this.let3.html().toLowerCase()] : 3,
-    [this.let4.html().toLowerCase()] : 4,
-    [this.let5.html().toLowerCase()] : 5,
-  };
+  for (let i = 0; i < 6; i++) {
+    this[`let${i}`] = $(`.let-${i}`);
+    let el = this[`let${i}`];
+    this.letters[el.html().toLowerCase()] = i;
+  }
 }
 ```
 
